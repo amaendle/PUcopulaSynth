@@ -1,0 +1,25 @@
+Package: PUcopulaSynth
+Type: Package
+Title: Partition-of-Unity Copula Fitting and Synthesis for R
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Andreas", "Mändle",
+      email = "maendle@uni-bremen.de",
+      role = c("aut", "cre")
+    )
+  )
+Description: Fit multivariate distributions using a Partition-of-Unity copula 
+    dependence structure, estimate marginals, and generate synthetic data with 
+    factor pre/post-processing.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr

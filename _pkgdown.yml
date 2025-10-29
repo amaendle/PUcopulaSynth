@@ -1,0 +1,45 @@
+template:
+  bootstrap: 5
+  bootswatch: flatly
+
+url: ~
+navbar:
+  structure:
+    left:  [reference, articles, news]
+    right: [search, github]
+  components:
+    reference:
+      text: Reference
+      href: reference/index.html
+    articles:
+      text: Articles
+      menu:
+        - text: "PUcopulaSynth workflow"
+          href: articles/pu-workflow.html
+
+home:
+  title: "PUcopulaSynth"
+  description: "Partition-of-Unity copula fitting and synthetic data generation for R."
+
+reference:
+  - title: "Main workflow"
+    contents:
+      - preprocessData
+      - fitPUcopula
+      - estimateMarginals
+      - generateSynthetic
+  - title: "Helpers"
+    contents:
+      - save_original_varnames
+      - save_original_classes
+      - simulateCopula
+      - knnsmoother
+
+articles:
+  - title: "Guides"
+    contents:
+      - pu-workflow
+
+authors:
+  Andreas Mändle:
+    href: "mailto:maendle@uni-bremen.de"
