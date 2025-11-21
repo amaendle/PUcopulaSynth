@@ -10,7 +10,7 @@
 #' @return A named list of marginal models (each element has `qfun`)
 #' @export
 #' @importFrom logspline logspline
-estimateMarginals <- function(data, method = "spline", k = NULL) {
+estimateMarginals <- function(data, method = "spline", k = NULL, lbound=NULL, ubound=NULL) {
   if (!requireNamespace("logspline", quietly = TRUE)) stop("logspline package is required")
 
   method <- rep_len(method, 2)
@@ -56,8 +56,23 @@ estimateMarginals <- function(data, method = "spline", k = NULL) {
           prop.table(table(col))
         } else if (is.factor(col)) {
           if (method[2] == "spline") {
+            #to be tested
+            #col <- jitter(as.numeric(as.character(col)), amount=0.5)
+            col <- jitter(as.numeric(col), amount=0.5)
+
+            # call logspline with possible bounds
+            args <- list(col)
+            # do not invent new factor levels
+            #if (!is.null(lbound) && is.list(lbound) && !is.null(lbound[[varname]])) {
+              args$lbound <- min(col)
+            #}
+            #if (!is.null(ubound) && is.list(ubound) && !is.null(ubound[[varname]])) {
+              args$ubound <- max(col)
+            #}
+
+            # call logspline with the dynamically built argument list
             tryCatch(
-              logspline::logspline(jitter(as.numeric(as.character(col_jittered))), amount=0.5),
+              do.call(logspline::logspline, args), #logspline::logspline(jitter(as.numeric(as.character(col_jittered))), amount=0.5),
               error = function(e) stop(sprintf("logspline failed for '%s': %s", varname, conditionMessage(e)), call. = FALSE)
             )
           } else {
@@ -66,10 +81,24 @@ estimateMarginals <- function(data, method = "spline", k = NULL) {
         } else {
           if (is.integer(col)) {
             # jitter to make estimation numerically safer
-            col <- jitter(col, amount=0.5)
+            jit_amount <- 0.5
+            col <- jitter(col, amount=jit_amount)
+          } else {
+            jit_amount <- 0
           }
+
+          # call logspline with possible bounds
+          args <- list(col)
+          if (!is.null(lbound) && is.list(lbound) && !is.null(lbound[[varname]])) {
+            args$lbound <- lbound[[varname]] - jit_amount
+          }
+          if (!is.null(ubound) && is.list(ubound) && !is.null(ubound[[varname]])) {
+            args$ubound <- ubound[[varname]] + jit_amount
+          }
+
+          # call logspline with the dynamically built argument list
           tryCatch(
-            logspline::logspline(col),
+            do.call(logspline::logspline, args), #logspline::logspline(col),
             error = function(e) stop(sprintf("logspline failed for '%s': %s", varname, conditionMessage(e)), call. = FALSE)
           )
         }
