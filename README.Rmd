@@ -5,8 +5,7 @@ output: github_document
 # PUcopulaFit
 
 Fit multivariate distributions using a Partition-of-Unity copula, estimate marginals,
-and generate synthetic data. No DataSHIELD, no Python deps.
-
+and generate synthetic data.
 ```r
 # install dev version
 # remotes::install_github("yourname/PUcopulaFit")
