@@ -9,7 +9,7 @@ simulateCopula <- function(model, n) {
 
 #' Backtransform copula samples using fitted marginals
 #'
-#' Takes a matrix of copula samples (on [0,1]) and a list of marginal models
+#' Takes a matrix of copula samples (on \\[0,1\\]) and a list of marginal models
 #' and returns a data.frame on the original marginal scales.
 #'
 #' @param u Numeric matrix of size n x p with copula samples

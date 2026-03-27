@@ -35,7 +35,7 @@ check_if_trivial <- function(x) length(unique(x)) < 2
 #' k-NN smoother for numeric vectors (no DataSHIELD thresholds)
 #'
 #' @param x Numeric vector (NAs allowed).
-#' @param k Integer neighbours in [1, N-1] for non-missing values.
+#' @param k Integer neighbours in \\[1, N-1\] for non-missing values.
 #' @return Numeric vector of same length with smoothed non-missing entries.
 #' @export
 #' @importFrom RANN nn2
@@ -76,7 +76,7 @@ find_closest_cat <- function(..., contrast_tab) {
 transform_u <- function(u, x, p) {
   stopifnot(length(x) >= 2, length(p) == length(x))
   if (is.unsorted(x, strictly = TRUE)) stop("x must be strictly increasing")
-  if (any(p < 0 | p > 1) || is.unsorted(p, strictly = TRUE)) stop("p must be strictly increasing in [0,1]")
+  if (any(p < 0 | p > 1) || is.unsorted(p, strictly = TRUE)) stop("p must be strictly increasing in \\[0,1\\]")
   gaps <- diff(x)
   if (any(gaps <= 0)) stop("x must be strictly increasing")
   pk <- c(0, p[1:(length(x)-1)], 1)

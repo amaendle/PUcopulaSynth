@@ -32,7 +32,7 @@ No DataSHIELD and no Python dependencies.
 
 ## Installation
 
-```{r}
+```{r eval=FALSE}
 # if not already installed
 install.packages(c("logspline","RANN","dplyr","tidyselect","caret"))
 # then

@@ -9,7 +9,7 @@ knnsmoother(x, k = 3)
 \arguments{
 \item{x}{Numeric vector (NAs allowed).}
 
-\item{k}{Integer neighbours in \link{1, N-1} for non-missing values.}
+\item{k}{Integer neighbours in \[1, N-1] for non-missing values.}
 }
 \value{
 Numeric vector of same length with smoothed non-missing entries.

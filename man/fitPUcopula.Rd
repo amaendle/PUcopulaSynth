@@ -15,7 +15,7 @@ fitPUcopula(
 \arguments{
 \item{data}{Preprocessed data.frame (e.g., \code{preprocessData()$data})}
 
-\item{driver_strength_factor}{Numeric scalar or vector in (0,1] used to scale rows per variable}
+\item{driver_strength_factor}{Numeric scalar or vector in (0,1\] used to scale rows per variable}
 
 \item{bin_size}{Numeric scalar, vector, or named list with bin sizes}
 

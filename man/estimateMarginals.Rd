@@ -4,7 +4,13 @@
 \alias{estimateMarginals}
 \title{Estimate marginal models}
 \usage{
-estimateMarginals(data, method = "spline", k = NULL)
+estimateMarginals(
+  data,
+  method = "spline",
+  k = NULL,
+  lbound = NULL,
+  ubound = NULL
+)
 }
 \arguments{
 \item{data}{Preprocessed data.frame}

@@ -4,7 +4,7 @@
 #' rank-binning and jitter for numeric variables.
 #'
 #' @param data Preprocessed data.frame (e.g., `preprocessData()$data`)
-#' @param driver_strength_factor Numeric scalar or vector in (0,1] used to scale rows per variable
+#' @param driver_strength_factor Numeric scalar or vector in (0,1\\] used to scale rows per variable
 #' @param bin_size Numeric scalar, vector, or named list with bin sizes
 #' @param jitter FALSE, numeric (single) or named list mapping variables to jitter factors
 #' @param family PUcopula family, e.g. "binom" or "nbinom"
