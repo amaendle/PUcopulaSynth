@@ -7,6 +7,8 @@
 #' @param data Preprocessed data.frame
 #' @param method Character; for numeric and ordered factors (currently "spline")
 #' @param k Numeric scalar, vector, or named list for k-NN smoothing
+#' @param lbound lower boundary of distribution passed to [logspline::logspline()].
+#' @param rbound upper boundary of distribution passed to [logspline::logspline()].
 #' @return A named list of marginal models (each element has `qfun`)
 #' @export
 #' @importFrom logspline logspline

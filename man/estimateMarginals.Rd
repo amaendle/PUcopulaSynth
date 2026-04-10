@@ -18,6 +18,10 @@ estimateMarginals(
 \item{method}{Character; for numeric and ordered factors (currently "spline")}
 
 \item{k}{Numeric scalar, vector, or named list for k-NN smoothing}
+
+\item{lbound}{lower boundary of distribution passed to \code{\link[logspline:logspline]{logspline::logspline()}}.}
+
+\item{rbound}{upper boundary of distribution passed to \code{\link[logspline:logspline]{logspline::logspline()}}.}
 }
 \value{
 A named list of marginal models (each element has \code{qfun})

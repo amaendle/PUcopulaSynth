@@ -1,3 +1,5 @@
+#' @importFrom stats predict
+
 #' @keywords internal
 #' @noRd
 rank_bin_smooth <- function(x, k) {

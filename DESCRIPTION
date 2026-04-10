@@ -12,7 +12,7 @@ Authors@R: c(
 Description: Fit multivariate distributions using a Partition-of-Unity copula 
     dependence structure, estimate marginals, and generate synthetic data with 
     factor pre/post-processing.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -25,3 +25,14 @@ Config/testthat/edition: 3
 VignetteBuilder: knitr
 URL: https://github.com/amaendle/PUcopulaSynth
 BugReports: https://github.com/amaendle/PUcopulaSynth/issues
+Imports: 
+    caret,
+    PUcopula,
+    logspline,
+    dplyr,
+    RANN,
+    tidyr,
+    tidyselect,
+    stats
+Additional_repositories:
+    https://amaendle.r-universe.dev/
